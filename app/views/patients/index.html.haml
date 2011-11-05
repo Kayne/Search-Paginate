@@ -1,0 +1,37 @@
+%p
+   Możesz skorzystać z poniższej wyszukiwarki, by odnaleźć konkretniejsze wpisy
+   = search_form_for @query do |f|
+      %p
+         = f.label :name_cont
+         = f.text_field :name_cont
+      %p
+         = f.label :surname_cont
+         = f.text_field :surname_cont
+      %p
+         = f.label :age_eq
+         = f.text_field :age_eq
+      %p
+         = f.label :age_gt
+         = f.text_field :age_gt
+      %p
+         = f.label :age_lt
+         = f.text_field :age_lt
+      %p
+         = f.submit
+
+
+%div
+   %p
+      %table
+         %tr
+            %td= "Imię"
+            %td= "Nazwisko"
+            %td= "Wiek"
+            %td= "Zmodyfikowano" 
+         - @patients.each do |patient|
+            %tr
+               %td= patient.name
+               %td= patient.surname
+               %td= patient.age
+               %td= patient.updated_at
+%p= will_paginate @posts

@@ -9,7 +9,9 @@ gem 'sqlite3'
 gem 'therubyracer'
 gem 'heroku'
 gem 'haml'
-
+gem 'faker'
+gem 'ransack'
+gem 'will_paginate'
 
 # Gems used only for assets and not required
 # in production environments by default.
